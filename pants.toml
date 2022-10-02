@@ -1,0 +1,21 @@
+[GLOBAL]
+pants_version = "2.13.0"
+backend_packages = ["pants.backend.python"]
+
+[python-bootstrap]
+search_path = [
+    "<PATH>",
+    "<PYENV>",
+    "/usr/bin/",
+     # Brew usually installs Python here.
+    "/usr/local/bin/",
+]
+
+[python]
+interpreter_constraints = ["CPython~=3.10"]
+tailor_pex_binary_targets = false
+
+enable_resolves = true
+
+[python.resolves]
+python-default = "pants-lockfile.txt"
